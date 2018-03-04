@@ -20,7 +20,7 @@ email  | text   | null: false
 
 Column   | Type    | Options
 :------- | :------ | :-----------------------------
-user_id  | integer | null: false, foreign_key: true
+user_id  | integer | index:true, null: false, foreign_key: true
 group_id | integer | null: false, foreign_key: true
 
 ## Association
