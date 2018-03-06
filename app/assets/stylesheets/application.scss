@@ -7,6 +7,7 @@
   width: 300px;
   height: 100vh;
   float: left;
+
   &__userName {
     font-size: 16px;
     font-weight: bold;
@@ -14,18 +15,22 @@
     color: #ffffff;
     background-color: #253141;
     top: 35px;
-    bottom:0px;
-    &--fonts{
+    bottom: 0;
+    height: 64px;
+
+    &--fonts {
       float: right;
     }
   }
-  &__groupInfo{
-    margin-top:20px;
+
+  &__groupInfo {
+    margin-top: 20px;
     margin-bottom: 40px;
     background-color: #2f3e51;
     padding: 0 20px;
     font-size: 15px;
-    &--lastMessage{
+
+    &--lastMessage {
       margin-top: 5px;
       font-size: 11px;
     }
@@ -33,8 +38,85 @@
 }
 
 .chatMain {
-  background-color: red;
   width: calc(100vw - 300px);
   height: 100vh;
   float: right;
+
+  &__head {
+    padding-left: 40px;
+    padding-right: 40px;
+    border-bottom: 1px solid #eeeeee;
+    height: 98px;
+
+    &__group {
+      font-size: 20px;
+      color: #333333;
+      padding-top: 35px;
+      float: left;
+
+      &--menber {
+        font-size: 12px;
+        color: #999999;
+        padding-top: 15px;
+      }
+    }
+
+    &__edit {
+      float: right;
+      border: 1px solid black;
+      height: 30px;
+      padding-left: 20px;
+      padding-right: 20px;
+      vertical-align: text-bottom;
+      margin-top: 27px;
+      padding-top: 5px;
+      padding-bottom: 4px;
+    }
+  }
+
+  &__body {
+    background-color: #AAAAAA;
+    height: calc(100vh - (98px + 46px));
+    padding-top: 46px;
+    padding-right: 40px;
+    position: relative;
+    &__oneMess {
+      font-size: 16px;
+      font-weight: bold;
+      color: #434A54;
+      margin-right: 10px;
+      float: left;
+      padding-left: 40px;
+
+      &__time {
+        position: relative;
+        font-size: 12px;
+        color: #999999;
+      }
+    }
+    &__detail{
+      font-size: 14px;
+      color: #434A54;
+      clear: both;
+      padding-bottom: 40px;
+      padding-top: 10px;
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+    &__sendMess{
+      margin-top: 20px;
+      position: absolute;
+      vertical-align: text-bottom;
+      display: table-cell;
+    	bottom: 0px;
+      font-size: 16px;
+      padding-top: 27px;
+      padding-bottom: 27px;
+      padding-left: 50px;
+      border-top: 1px solid blue;
+      width: calc(100vw - 350px);
+      border-left: 1px solid blue;
+      border-right: 1px solid blue;
+    }
+  }
 }
