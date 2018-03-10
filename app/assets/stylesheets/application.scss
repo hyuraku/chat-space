@@ -46,7 +46,7 @@
     padding-left: 40px;
     padding-right: 40px;
     border-bottom: 1px solid #eeeeee;
-    height: 98px;
+    height: 97px;
 
     &__group {
       font-size: 20px;
@@ -80,6 +80,7 @@
     padding-top: 46px;
     padding-right: 40px;
     position: relative;
+
     &__oneMess {
       font-size: 16px;
       font-weight: bold;
@@ -94,29 +95,42 @@
         color: #999999;
       }
     }
-    &__detail{
+
+    &__detail {
       font-size: 14px;
       color: #434A54;
       clear: both;
-      padding-bottom: 40px;
-      padding-top: 10px;
-      padding-left: 40px;
-      padding-right: 40px;
+      padding: 10px 40px 40px;
     }
-    &__sendMess{
-      margin-top: 20px;
-      position: absolute;
-      vertical-align: text-bottom;
-      display: table-cell;
-    	bottom: 0px;
+  }
+
+  &__foot {
+    position: fixed;
+    vertical-align: text-bottom;
+    display: table-cell;
+    bottom: 0;
+    font-size: 16px;
+    padding-left: 40px;
+    width: calc(100vw - 300px - 80px);
+    padding-right: 40px;
+
+    &__body {
+      height: 20px;
       font-size: 16px;
-      padding-top: 27px;
-      padding-bottom: 27px;
-      padding-left: 50px;
-      border-top: 1px solid blue;
-      width: calc(100vw - 350px);
-      border-left: 1px solid blue;
-      border-right: 1px solid blue;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      vertical-align: bottom;
+      padding: 15px 10px;
+      &--icon {
+        float: right;
+        margin-right: 25px;
+      }
+      &--send {
+        height: 50px;
+        float: right;
+        font-size: 13px;
+        background-color: #38AEF0;
+      }
     }
   }
 }
