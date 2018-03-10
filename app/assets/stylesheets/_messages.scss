@@ -38,7 +38,7 @@
   height: 100vh;
   float: right;
 
-  &__head {
+  &__header {
     padding-left: 40px;
     padding-right: 40px;
     border-bottom: 1px solid #eeeeee;
@@ -71,7 +71,7 @@
   }
 
   &__body {
-    background-color: #AAAAAA;
+    background-color: rgba(35, 96, 24, 0.41);
     height: calc(100vh - (98px + 46px));
     padding-top: 46px;
     padding-right: 40px;
@@ -100,7 +100,7 @@
     }
   }
 
-  &__foot {
+  &__footer {
     position: fixed;
     vertical-align: text-bottom;
     display: table-cell;
@@ -109,6 +109,7 @@
     padding-left: 40px;
     width: calc(100vw - 300px - 80px);
     padding-right: 40px;
+    background: rgb(217, 218, 174);
 
     &__body {
       height: 20px;
@@ -119,6 +120,8 @@
       padding: 15px 10px 15px 0px;
       width: calc(100vw - 300px - 160px);
       float: left;
+      background-color: white;
+
       &--icon {
         float: right;
       }
@@ -132,9 +135,9 @@
       padding-top: 15px;
       padding-bottom: 15px;
       font-size: 16px;
-      margin-left: 15px;
-      width: 50px;
+      width: 70px;
       text-align: center;
+      
     }
   }
 }

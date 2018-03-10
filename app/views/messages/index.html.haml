@@ -6,19 +6,19 @@
       = fa_icon("cog")
   = render partial: "group"
 .chatMain
-  .chatMain__head
-    .chatMain__head__group
+  .chatMain__header
+    .chatMain__header__group
       sample_group
-      .chatMain__head__group--menber
+      .chatMain__header__group--menber
         Taro Ziro Tom
-    .chatMain__head__edit
+    .chatMain__header__edit
       Edit
   .chatMain__body
     = render partial: "message"
-  .chatMain__foot
-    .chatMain__foot__body
+  .chatMain__footer
+    .chatMain__footer__body
       Write Message
-      .chatMain__foot__body--icon
+      .chatMain__footer__body--icon
         = fa_icon("image")
-    .chatMain__foot--send
+    .chatMain__footer--send
       send
