@@ -1,8 +1,6 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %meta{:charset => "utf-8"}/
     %title Sample
   %body
     .sideMenu
@@ -11,14 +9,7 @@
         .sideMenu__userName--fonts
           = fa_icon("edit")
           = fa_icon("cog")
-      .sideMenu__groupInfo
-        test_group
-        .sideMenu__groupInfo--lastMessage
-          last_message
-      .sideMenu__groupInfo
-        test_group2
-        .sideMenu__groupInfo--lastMessage
-          last_message2
+      = render partial: "group"
     .chatMain
       .chatMain__head
         .chatMain__head__group
@@ -28,18 +19,7 @@
         .chatMain__head__edit
           Edit
       .chatMain__body
-        .chatMain__body__oneMess
-          Taro
-        .chatMain__body__oneMess__time
-          2018/03/01 12:45:45
-        .chatMain__body__detail
-          Shape of water
-        .chatMain__body__oneMess
-          Ziro
-        .chatMain__body__oneMess__time
-          2018/03/01 12:50:45
-        .chatMain__body__detail
-          Get Out
+        = render partial: "message"
       .chatMain__foot
         .chatMain__foot__body
           Write Message
