@@ -120,17 +120,25 @@
       margin-top: 20px;
       margin-bottom: 20px;
       vertical-align: bottom;
-      padding: 15px 10px;
+      padding: 15px 10px 15px 0px;
+      width: calc(100vw - 300px - 160px);
+      float: left;
       &--icon {
         float: right;
-        margin-right: 25px;
       }
-      &--send {
-        height: 50px;
-        float: right;
-        font-size: 13px;
-        background-color: #38AEF0;
-      }
+    }
+    &--send{
+      float: right;
+      background-color: #38AEF0;
+      margin-top: 20px;
+      margin-bottom:20px;
+      height: 20px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      font-size: 16px;
+      margin-left: 15px;
+      width: 50px;
+      text-align: center;
     }
   }
 }
