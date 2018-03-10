@@ -1,0 +1,24 @@
+.sideMenu
+  .sideMenu__userName
+    Taro
+    .sideMenu__userName--fonts
+      = fa_icon("edit")
+      = fa_icon("cog")
+  = render partial: "group"
+.chatMain
+  .chatMain__header
+    .chatMain__header__group
+      sample_group
+      .chatMain__header__group--menber
+        Taro Ziro Tom
+    .chatMain__header__edit
+      Edit
+  .chatMain__body
+    = render partial: "message"
+  .chatMain__footer
+    .chatMain__footer__body
+      Write Message
+      .chatMain__footer__body--icon
+        = fa_icon("image")
+    .chatMain__footer--send
+      send
