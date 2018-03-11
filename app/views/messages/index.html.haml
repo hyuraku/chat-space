@@ -1,9 +1,10 @@
 .sideMenu
   .sideMenu__userName
-    Taro
+    = current_user.name
     .sideMenu__userName--fonts
       = fa_icon("edit")
-      = fa_icon("cog")
+      = link_to edit_user_registration_path do
+        = fa_icon("cog")
   = render partial: "group"
 .chatMain
   .chatMain__header
