@@ -2,18 +2,20 @@
   .sideMenu__userName
     = current_user.name
     .sideMenu__userName--fonts
-      = fa_icon("edit")
+      = link_to new_group_path do
+        = fa_icon("edit")
       = link_to edit_user_registration_path do
         = fa_icon("cog")
-  = render partial: "group"
+  = render partial: "shared/group"
 .chatMain
   .chatMain__header
     .chatMain__header__group
-      sample_group
+      sample g
       .chatMain__header__group--menber
         Taro Ziro Tom
     .chatMain__header__edit
-      Edit
+      = link_to edit_group_path(params[:group_id]) do
+        Edit
   .chatMain__body
     = render partial: "message"
   .chatMain__footer
