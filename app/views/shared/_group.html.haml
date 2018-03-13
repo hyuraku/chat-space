@@ -1,0 +1,6 @@
+- current_user.groups.each do |group|
+  = link_to group_messages_path(group) do
+    .sideMenu__groupInfo
+      = group.name
+      .sideMenu__groupInfo--lastMessage
+        last_message

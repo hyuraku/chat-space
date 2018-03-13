@@ -1,0 +1,14 @@
+.sideMenu
+  .sideMenu__userName
+    = current_user.name
+    .sideMenu__userName--fonts
+      = link_to new_group_path do
+        = fa_icon("edit")
+      = link_to edit_user_registration_path do
+        = fa_icon("cog")
+  - current_user.groups.each do |group|
+    = link_to group_messages_path(group) do
+      .sideMenu__groupInfo
+        = group.name
+        .sideMenu__groupInfo--lastMessage
+          last_message
