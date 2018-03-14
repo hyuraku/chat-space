@@ -19,9 +19,9 @@
   .chatMain__body
     = render partial: "message"
   .chatMain__footer
-    .chatMain__footer__body
-      Write Message
-      .chatMain__footer__body--icon
-        = fa_icon("image")
-    .chatMain__footer--send
-      send
+    = form_for [@group,@message] do |f|
+      = f.text_field :body ,class: '.chatMain__footer__body', placeholder: 'type a message'
+      = f.label :image ,class: '.chatMain__footer__body--icon' do
+        = fa_icon "image",class: 'icon'
+        = f.file_field :image,class: 'hidden'
+      = f.submit 'Send', class: 'chatMain__footer--send'
