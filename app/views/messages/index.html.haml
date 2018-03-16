@@ -17,11 +17,11 @@
       = link_to edit_group_path(params[:group_id]) do
         Edit
   .chatMain__body
-    = render partial: "message"
+    = render @messages
   .chatMain__footer
     = form_for [@group,@message] do |f|
-      = f.text_field :body ,class: '.chatMain__footer__body', placeholder: 'type a message'
-      = f.label :image ,class: '.chatMain__footer__body--icon' do
-        = fa_icon "image",class: 'icon'
-        = f.file_field :image,class: 'hidden'
+      = f.text_field :body ,class: 'chatMain__footer__body', placeholder: 'type a message'
+      = f.label :image  do
+        = fa_icon "image",class: 'chatMain__footer__body--icon'
+        = f.file_field :image,class: 'chatMain__footer__body--hidden'
       = f.submit 'Send', class: 'chatMain__footer--send'
