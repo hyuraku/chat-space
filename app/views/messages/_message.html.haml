@@ -1,12 +1,7 @@
 .chatMain__body__oneMess
-  Taro
+  = message.user.name
 .chatMain__body__oneMess__time
-  2018/03/01 12:45:45
-.chatMain__body__detail
-  Shape of water
-.chatMain__body__oneMess
-  Ziro
-.chatMain__body__oneMess__time
-  2018/03/01 12:50:45
-.chatMain__body__detail
-  Get Out
+  = message.created_at
+- if message.body.present?
+  %p.chatMain__body__detail
+    = message.body
