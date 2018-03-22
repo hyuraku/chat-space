@@ -11,6 +11,11 @@ ja:
       not_saved:
         one: "エラーにより、この %{resource} を保存できません："
         other: "%{count} 個のエラーにより、この %{resource} を保存できません："
+    models:
+      message:
+        attributes:
+          user:
+            required: "を入力してください:"
 
   devise:
     failure:
