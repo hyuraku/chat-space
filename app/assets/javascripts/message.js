@@ -9,8 +9,11 @@ $(function() {
                 </div>
                 <p class="chatMain__body__detail">
                 ${message.text}
-                </p>
-                <img class="chatMain__body__image" src=${message.image.url} alt="" >`
+                </p>`
+    if (message.image.url) {
+      html = html + `<img class="chatMain__body__image" src=${message.image.url} alt="" >`
+    }
+
     return html;
   }
 
@@ -34,6 +37,8 @@ $(function() {
       .fail(function() {
         alert('error');
       })
-    $('.chatMain__body').animate({scrollTop: $('.chatMain__body')[0].scrollHeight}, 'fast');
+    $('.chatMain__body').animate({
+      scrollTop: $('.chatMain__body')[0].scrollHeight
+    }, 'fast');
   })
 });
