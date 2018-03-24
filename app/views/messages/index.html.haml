@@ -10,9 +10,9 @@
 .chatMain
   .chatMain__header
     .chatMain__header__group
-      sample g
+      = @group.name
       .chatMain__header__group--menber
-        Taro Ziro Tom
+        = @group.users.name
     .chatMain__header__edit
       = link_to edit_group_path(params[:group_id]) do
         Edit

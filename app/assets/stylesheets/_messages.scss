@@ -3,6 +3,7 @@
   width: 300px;
   height: 100vh;
   float: left;
+  position: fixed;
 
   &__userName {
     font-size: 16px;
@@ -72,10 +73,11 @@
 
   &__body {
     background-color: rgba(35, 96, 24, 0.41);
-    height: calc(100vh - (98px + 46px));
+    height: calc(100vh - 150px);
     padding-top: 46px;
     padding-right: 40px;
     position: relative;
+    overflow: auto;
 
     &__oneMess {
       font-size: 16px;
