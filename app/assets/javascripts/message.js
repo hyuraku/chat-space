@@ -2,13 +2,15 @@ $(function() {
   function buildHTML(message) {
     var html = `<div class="chatMain__body__oneMess">
                 ${message.user_name}
-                </div>
+
                 <div class="chatMain__body__oneMess__time">
                 ${message.created_at}
                 </div>
+                </div>
                 <p class="chatMain__body__detail">
                 ${message.text}
-                </p>`
+                </p>
+                <img class="chatMain__body__image" src=${message.image.url} alt="" >`
     return html;
   }
 
@@ -32,6 +34,6 @@ $(function() {
       .fail(function() {
         alert('error');
       })
-    $('.chatMain__body').animate({scrollTop: $('.chatMain__body').height() }, 500, 'swing');
+    $('.chatMain__body').animate({scrollTop: $('.chatMain__body')[0].scrollHeight}, 'fast');
   })
 });
