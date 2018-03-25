@@ -12,8 +12,8 @@
     .chatMain__header__group
       = @group.name
       .chatMain__header__group--menber
-        - for i in @group.users.ids
-          = User.find(i)[:name]
+        - for i in @group.users
+          = i[:name]
     .chatMain__header__edit
       = link_to edit_group_path(params[:group_id]) do
         Edit
