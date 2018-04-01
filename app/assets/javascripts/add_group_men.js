@@ -20,9 +20,9 @@ $(function() {
     search_list.append(html);
   }
 
-    $('.chat-group-form__field--right#search').on('click', 'a', function() {
-      var add_user_id = $(this).attr('data-user-id')
-      var add_user_name = $(this).attr('data-user-name')
+    $('#user-search-result').on('click', '.chat-group-user__btn--add', function() {
+      var add_user_id = $(this).data('user-id')
+      var add_user_name = $(this).data('user-name')
       var add_html = `
       <div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
         <input name='group[user_ids][]' type='hidden' value=${add_user_id}>
@@ -34,10 +34,9 @@ $(function() {
       $(this).parent().remove();
     });
 
-    $('.chat-group-form__field--right#result').on('click', 'a', function(){
+    $('#chat-group-users').on('click', '.chat-group-user__btn--remove', function(){
       $(this).parent().remove();
     });
-
 
   $('#user-search-field').on('keyup', function() {
     //e.preventDefault()
