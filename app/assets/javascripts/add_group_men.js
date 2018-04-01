@@ -2,7 +2,6 @@ $(function() {
 
   var search_list = $("#user-search-result");
   var user_list = $("#chat-group-users");
-  var time = 0
 
   function appendUser(user) {
     var html = `
@@ -43,7 +42,6 @@ $(function() {
   $('#user-search-field').on('keyup', function() {
     //e.preventDefault()
     var input = $("#user-search-field").val();
-    input = input.replace(/\s+/g, "");
     if (input) {
       $.ajax({
           type: 'GET',
