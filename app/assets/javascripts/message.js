@@ -60,7 +60,7 @@ $(function() {
               insertHTML += buildHTML(message);
             }
           });
-          $('.chatMain__body').prepend(insertHTML);
+          $('.chatMain__body').append(insertHTML);
         })
         .fail(function(json) {
           alert("自動更新に失敗しました");
