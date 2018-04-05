@@ -46,18 +46,26 @@ $(function() {
 
   var interval = setInterval(function() {
     if (window.location.href.match(/\/groups\/\d+\/messages/)) {
+      var present_mess = $('.chatMain__body__oneMess')[$('.chatMain__body__oneMess').length -1]
+      var last_message_id = $(present_mess).attr("data-message-id");
+      // var present_mess = $('.chatMain__body__oneMess')
+      // var last_message_id = present_mess[present_mess.length - 1].getAttribute("data-message-id");
       $.ajax({
           url: location.href.json,
           type:'GET',
-          dataType:'json',
+          data: {
+            keyword : last_message_id
+          },
+          dataType:'json'
         })
         .done(function(json) {
           var insertHTML = '';
-          var present_mess = $('.chatMain__body__oneMess')
-          var id = present_mess[present_mess.length - 1].getAttribute("data-message-id");
           json.messages.forEach(function(message) {
-            if (message.id > id) {
+            if (message.id > last_message_id) {
               insertHTML += buildHTML(message);
+              $('.chatMain__body').animate({
+                scrollTop: $('.chatMain__body')[0].scrollHeight
+              }, 'fast');
             }
           });
           $('.chatMain__body').append(insertHTML);
@@ -68,5 +76,5 @@ $(function() {
     } else {
       clearInterval(interval);
     }
-  }, 5 * 1000);
+  }, 5000);
 });
