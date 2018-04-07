@@ -1,7 +1,7 @@
 .chatMain__body__oneMess{'data-message-id': message.id}
   = message.user.name
   .chatMain__body__oneMess__time
-    = message.created_at
+    = message.created_at.strftime("%Y/%m/%d %H:%M:%S")
 - if message.body.present?
   %p.chatMain__body__detail
     = message.body
