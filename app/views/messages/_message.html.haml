@@ -1,8 +1,8 @@
 .chatMain__body__oneMess{'data-message-id': message.id}
   = message.user.name
   .chatMain__body__oneMess__time
-    = message.created_at.strftime("%Y/%m/%d %H:%M:%S")
+    = message.created_at
 - if message.body.present?
   %p.chatMain__body__detail
     = message.body
-= image_tag message.image.url,class: 'chatMain__body__image' if message.image.present?
+= image_tag message.image.url, class: 'chatMain__body__image' if message.image.present?
