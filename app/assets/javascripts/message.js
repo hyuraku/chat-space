@@ -46,9 +46,9 @@ $(function() {
 
   var interval = setInterval(function() {
     if (window.location.href.match(/\/groups\/\d+\/messages/)) {
-      var last_message_id = $('.chatMain__body__oneMess').filter(":last").attr("data-message-id");
+      var last_message_id = $('.chatMain__body__oneMess').filter(":last").data("message-id");
       $.ajax({
-          url: location.href.json,
+          url: location.href,
           type:'GET',
           data: {
             id: last_message_id
