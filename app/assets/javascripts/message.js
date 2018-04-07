@@ -1,5 +1,6 @@
 $(function() {
   function buildHTML(message) {
+    //
     var html = `<div class="chatMain__body__oneMess" data-message-id=${message.id}>
                 ${message.user_name}
                 <div class="chatMain__body__oneMess__time">
@@ -8,10 +9,11 @@ $(function() {
                 </div>
                 <p class="chatMain__body__detail">
                 ${message.text}
-                </p>`;
-    if (message.image.url) {
-      html = html + `<img class="chatMain__body__image" src=${message.image.url} alt="" >`;
-    }
+                </p>`
+
+    var image = `<img class="chatMain__body__image" src=${message.image.url} alt="" >`
+
+    message.image.url ? html = html + image : html
 
     return html;
   }
