@@ -44,6 +44,11 @@
     padding-right: 40px;
     border-bottom: 1px solid #eeeeee;
     height: 97px;
+    background-color: rgb(235, 236, 193);
+    top: 0px;
+    width: calc(100vw - 300px - 80px);
+    position: fixed;
+    z-index: 99;
 
     &__group {
       font-size: 20px;
@@ -73,7 +78,7 @@
 
   &__body {
     background-color: rgba(35, 96, 24, 0.41);
-    height: calc(100vh - 96px - 98px);
+    height: calc(100vh - 96px - 58px);
     padding-top: 46px;
     padding-right: 40px;
     position: relative;

@@ -1,6 +1,7 @@
 $(function() {
   function buildHTML(message) {
-    var html = `<div class="chatMain__body__oneMess">
+    //
+    var html = `<div class="chatMain__body__oneMess" data-message-id=${message.id}>
                 ${message.user_name}
                 <div class="chatMain__body__oneMess__time">
                 ${message.created_at}
@@ -9,9 +10,10 @@ $(function() {
                 <p class="chatMain__body__detail">
                 ${message.text}
                 </p>`
-    if (message.image.url) {
-      html = html + `<img class="chatMain__body__image" src=${message.image.url} alt="" >`
-    }
+
+    var image = `<img class="chatMain__body__image" src=${message.image.url} alt="" >`
+
+    message.image.url ? html = html + image : html
 
     return html;
   }
@@ -34,12 +36,42 @@ $(function() {
         var html = buildHTML(data);
         $('.chatMain__body').append(html);
         $('.chatMain__footer__body').val('');
-        $('.chatMain__footer__body--hidden').val('');  
+        $('.chatMain__footer__body--hidden').val('');
       })
       .fail(function() {
         alert('error');
-      })
+      });
     $('.chatMain__body').animate({
-      scrollTop: $('.chatMain__body')[0].scrollHeight }, 'fast')
-  })
+      scrollTop: $('.chatMain__body')[0].scrollHeight
+    }, 'fast');
+  });
+
+  var interval = setInterval(function() {
+    if (window.location.href.match(/\/groups\/\d+\/messages/)) {
+      var last_message_id = $('.chatMain__body__oneMess').filter(":last").data("message-id");
+      $.ajax({
+          url: location.href,
+          type:'GET',
+          data: {
+            id: last_message_id
+          },
+          dataType:'json'
+        })
+        .done(function(json) {
+          var insertHTML = '';
+          json.messages.forEach(function(message) {
+              insertHTML += buildHTML(message);
+              $('.chatMain__body').animate({
+                scrollTop: $('.chatMain__body')[0].scrollHeight
+              }, 'fast');
+          });
+          $('.chatMain__body').append(insertHTML);
+        })
+        .fail(function(json) {
+          alert("自動更新に失敗しました");
+        });
+    } else {
+      clearInterval(interval);
+    }
+  }, 5000);
 });
