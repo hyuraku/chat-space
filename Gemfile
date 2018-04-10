@@ -72,3 +72,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 
 gem "animate-rails"
+
+group :production do
+  gem 'unicorn'
+end
