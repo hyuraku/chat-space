@@ -18,3 +18,5 @@
 
 # Ignore public
 /public/*
+
+config/secrets.yml

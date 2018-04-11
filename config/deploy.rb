@@ -4,6 +4,7 @@ lock "~> 3.10.1"
 set :application, "chat-space"
 set :repo_url, "https://github.com/hyuraku/chat-space.git"
 
+set :linked_files, %w{ config/secrets.yml }
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
